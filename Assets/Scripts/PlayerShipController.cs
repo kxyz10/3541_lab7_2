@@ -49,25 +49,21 @@ public class PlayerShipController : MonoBehaviour
             if (transform.position.x > frameSize)
             {
                 shipController.Move(new Vector3(-1.0f, 0, 0));
-                //transform.position = new Vector3(9.9f, transform.position.y, transform.position.z);
-                Debug.Log(":Out of bounds");
+                Debug.Log("Out of bounds");
             }
             if (transform.position.x < -frameSize)
             {
                 shipController.Move(new Vector3(1.0f, 0, 0));
-                //transform.position = new Vector3(-9.9f, transform.position.y, transform.position.z);
                 Debug.Log("Out of bounds");
             }
             if (transform.position.y > frameSize)
             {
                 shipController.Move(new Vector3(0, -1.0f, 0));
-                //transform.position = new Vector3(transform.position.x, 9.9f, transform.position.z);
                 Debug.Log("Out of bounds");
             }
             if (transform.position.y < -frameSize)
             {
                 shipController.Move(new Vector3(0, 1.0f, 0));
-                //transform.position = new Vector3(transform.position.x, -9.9f, transform.position.z);
                 Debug.Log("Out of bounds");
             }
             shipController.Move((Vector3.right * horizontal + Vector3.up * vertical + Vector3.forward * forward) * Time.deltaTime * moveSpeed);
